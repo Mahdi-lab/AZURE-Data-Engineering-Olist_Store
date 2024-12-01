@@ -1,0 +1,13 @@
+{
+	"name": "mahdiSQLServerCopy",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Olist_warehouseLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

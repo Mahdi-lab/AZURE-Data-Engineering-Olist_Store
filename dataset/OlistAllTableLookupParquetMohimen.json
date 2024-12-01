@@ -1,0 +1,13 @@
+{
+	"name": "OlistAllTableLookupParquetMohimen",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerOlistMohimenRevision",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
