@@ -1,0 +1,17 @@
+{
+	"name": "Views_Proc",
+	"properties": {
+		"content": {
+			"query": "USE silver_db\nGO\n\nCREATE OR ALTER PROCEDURE olist_synapse_warehousedb_View \n    @TableName NVARCHAR(1000) -- Correct parameter name\nAS\nBEGIN\n    SET NOCOUNT ON; -- Prevent extra result sets from interfering\n\n    -- Input Validation\n    IF @TableName IS NULL OR LEN(@TableName) = 0\n    BEGIN\n        RAISERROR('TableName cannot be NULL or empty.', 16, 1);\n        RETURN;\n    END\n\n    -- Validation for TableName (not ViewName)\n    IF @TableName NOT LIKE '%[^a-zA-Z0-9_%]%' AND LEN(@TableName) <= 128\n    BEGIN\n        DECLARE @statement NVARCHAR(MAX);\n        DECLARE @fullPath NVARCHAR(1000);\n\n        -- Set the full path with proper escaping\n        SET @fullPath = 'https://olistdepi.dfs.core.windows.net/silver/delta/' + @TableName + '/';\n\n        -- Construct the dynamic SQL statement\n        SET @statement = 'CREATE OR ALTER VIEW ' + QUOTENAME(@TableName) + ' AS\n        SELECT *\n        FROM OPENROWSET(\n            BULK ''' + @fullPath + ''',\n            FORMAT = ''DELTA''\n        ) AS [result];';\n\n        BEGIN TRY\n            -- Execute the dynamic SQL statement\n            EXEC sp_executesql @statement;\n\n            -- Log success\n            PRINT 'View ' + QUOTENAME(@TableName) + ' created or altered successfully.';\n        END TRY\n        BEGIN CATCH\n            -- Log the error details\n            DECLARE @ErrorMessage NVARCHAR(4000);\n            DECLARE @ErrorSeverity INT;\n            DECLARE @ErrorState INT;\n\n            SELECT \n                @ErrorMessage = ERROR_MESSAGE(),\n                @ErrorSeverity = ERROR_SEVERITY(),\n                @ErrorState = ERROR_STATE();\n\n            RAISERROR('Error creating view: %s', @ErrorSeverity, @ErrorState, @ErrorMessage);\n        END CATCH\n    END\n    ELSE\n    BEGIN\n        RAISERROR('Invalid TableName. It must consist of alphanumeric characters, underscores, or percent signs, and must be less than or equal to 128 characters.', 16, 1);\n        RETURN;\n    END\nEND\nGO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "silver_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

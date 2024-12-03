@@ -1,0 +1,19 @@
+{
+	"name": "silver_table_names",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "olistsworkapacesynapse-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "delta",
+				"fileSystem": "silver"
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

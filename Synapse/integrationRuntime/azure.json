@@ -1,0 +1,6 @@
+{
+	"name": "azure",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

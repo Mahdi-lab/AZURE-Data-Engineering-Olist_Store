@@ -1,0 +1,7 @@
+{
+	"name": "SynapseIRN",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Migrate Olist_Warehouse_2 from local MSSQL server to Cloud"
+	}
+}

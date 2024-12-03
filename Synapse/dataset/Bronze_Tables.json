@@ -1,0 +1,19 @@
+{
+	"name": "Bronze_Tables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "olistsworkapacesynapse-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "dbo",
+				"fileSystem": "bronze"
+			}
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

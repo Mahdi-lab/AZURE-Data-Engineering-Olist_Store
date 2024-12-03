@@ -1,0 +1,11 @@
+{
+	"name": "AzureKeyVaultSynapse",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://Olistkeyvault2024.vault.azure.net/"
+		}
+	}
+}

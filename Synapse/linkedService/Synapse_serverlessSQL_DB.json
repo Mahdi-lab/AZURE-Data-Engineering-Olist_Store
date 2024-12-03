@@ -1,0 +1,20 @@
+{
+	"name": "Synapse_serverlessSQL_DB",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "olistsworkapacesynapse-ondemand.sql.azuresynapse.net",
+			"database": "silver_db",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		},
+		"description": "connection to silverdb"
+	}
+}
