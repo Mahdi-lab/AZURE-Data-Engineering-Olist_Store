@@ -1,0 +1,16 @@
+{
+	"name": "OlistAzureDataLakeStorage2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://olistdepi.dfs.core.windows.net/",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1YTUxNzhkMy0zMDVmLTQ3Y2QtODg2ZC1iM2IxOWUzODhkNWEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Olist-Store-DataFactory-IRN",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

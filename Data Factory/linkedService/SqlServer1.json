@@ -1,0 +1,28 @@
+{
+	"name": "SqlServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "IT-NB-040\\MSSQLSERVERR",
+			"database": "Olist_Warehouse_2",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "olist",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault2024",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "mahdi-password"
+			}
+		},
+		"connectVia": {
+			"referenceName": "Olist-Store-DataFactory-IRN",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
