@@ -1,9 +1,0 @@
-{
-	"name": "Olist-Store-DataFactory",
-	"location": "southafricanorth",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "10928d9e-7568-4328-9013-77edced128e4",
-		"tenantId": "0bc92751-071a-4e2c-a48b-633206fef374"
-	}
-}
