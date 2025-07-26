@@ -15,6 +15,14 @@ This project shows how to build a complete data pipeline using:
 
 - Source: [Olist E-commerce Dataset (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
+## 🚀 Steps in the Pipeline
+
+1. **Extract** data from on-prem SQL Server using ADF
+2. **Load** it into Azure Synapse (staging layer)
+3. **Transform** the data in Azure Databricks using PySpark
+4. **Store** the final clean data in Synapse (final layer)
+5. **Visualize** in Power BI to gain business insights
+
   
 ## 📈 Power BI Dashboard Highlights
 
@@ -24,7 +32,9 @@ This project shows how to build a complete data pipeline using:
 - Payment Methods
 - Review Score Analysis
 
----
+
+
+
 
 ## 📂 Project Files
 
